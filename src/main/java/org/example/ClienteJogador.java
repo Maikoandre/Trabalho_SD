@@ -1,5 +1,4 @@
 package org.example;
-
 // ClienteJogador.java
 import java.io.IOException;
 import java.util.Scanner;
@@ -65,21 +64,21 @@ public class ClienteJogador {
 
     private static void handleServerMessage(String message) {
         if (message.startsWith("START_GAME")) {
-            System.out.println(message.split("\\|")[0]);
+            System.out.println(message.split("\\|")[1]);
         } else if (message.equals("YOUR_TURN")) {
             System.out.println("\n>>> É A SUA VEZ! <<<");
             myTurn = true;
         } else if (message.startsWith("ANSWER")) {
-            System.out.println("Resposta do Mestre: " + message.split("\\|")[0]);
+            System.out.println("Resposta do Mestre: " + message.split("\\|")[1]);
         } else if (message.startsWith("HINT")) {
-            System.out.println("Dica do Mestre sobre o palpite: " + message.split("\\|")[0]);
+            System.out.println("Dica do Mestre sobre o palpite: " + message.split("\\|")[1]);
         } else if (message.equals("GUESS_OR_PASS_MENU")) {
             // Este menu aparece depois de uma pergunta
         } else if (message.startsWith("INFO")) {
-            System.out.println("Info: " + message.split("\\|")[0]);
+            System.out.println("Info: " + message.split("\\|")[1]);
         } else if (message.startsWith("END_GAME")) {
             System.out.println("\n### FIM DE JOGO ###");
-            System.out.println(message.split("\\|")[0]);
+            System.out.println(message.split("\\|")[1]);
             System.exit(0);
         }
     }
